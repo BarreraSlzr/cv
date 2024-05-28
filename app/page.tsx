@@ -13,7 +13,7 @@ export default function Home(){
           {
             name: 'Preboarding and Onboarding Web System App',
             description: 'Development of a web application for the management of the recruitment of human resources with external users, internal administrators and different roles involved.',
-            skillsUsed: [ 3, 5, 7, 8, 10, 14, 15, 13, 16] 
+            skillsUsed: [ 3, 5, 8, 10, 14, 15, 13, 16] 
           },
           {
             name: 'Tariff Classifier for Aduanas',
