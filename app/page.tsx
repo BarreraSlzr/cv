@@ -32,17 +32,17 @@ export default function Home(){
           },
           {
             name: 'Chatbot Support',
-            description: 'Initialization and configuration of the support chatbot that is displayed on the company's website for end users to increase the company's engagement and support to customers and experienced users, specific information is queried in databases. Support ticket creation is also connected throughout a DevOps system.',
+            description: `Initialization and configuration of the support chatbot that is displayed on the company's website for end users to increase the company's engagement and support to customers and experienced users, specific information is queried in databases. Support ticket creation is also connected throughout a DevOps system.`,
             skillsUsed: [1, 7, 16, 23]
           },
           {
             name: 'Many other small-projects as Fullstack or only Frontend capability',
-            description: 'I have created many other projects with less impact within the core business, such as internal laboratory management, the sensor network website with real-time information about the site, Stamping Monitor which was a website for real-time monitoring of Industry 4.0, or FlowChart that was a webapp where you can create a flow work and export it in csv to be used with a special font that creates flow-charts.',
+            description: 'I have created many other projects with less impact in core business, such as internal laboratory management, the sensor network website with real-time information from site, Stamping Monitor which was a website for real-time monitoring of Industry 4.0, or FlowChart that was a webapp where you can create a flow work and export it in csv to be used with a special font that creates flow-charts.',
             skillsUsed: [1, 3, 4, 25]
           },
           {
             name: 'Internal Collaboration with coworkers',
-            description: 'I was committed to increasing technology awareness among my co-workers with technical talks not only with other developers, but also with many non-technological people, such as the Human Resources Department, helping to automate their workflows using Microsoft's new capabilities.',
+            description: `I was committed to increasing technology awareness among my co-workers with technical talks not only with other developers, but also with many non-technological people, such as the Human Resources Department, helping to automate their workflows using Microsoft's new capabilities.`,
             skillsUsed: [24, 25]
           },
         ]
