@@ -1,0 +1,30 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install && npm run build",
+  "postCreateCommand": "npx create-next-app@latest",
+  "postAttachCommand": {
+    "server": "npm run dev"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "pages/index.js"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
+}
+npx next-app@ my-app --typescript --tailwind --eslint
+
+npx create-next-app@canary my-app --typescript --tailwind --eslint
+```
