@@ -32,7 +32,7 @@ export default function ContactForm({ className, contact }: React.ComponentProps
   return (
     <div className="bg-gray-100 grid items-start gap-4 rounded-lg m-2 p-2">
       <div className="flex gap-2 mt-2">
-        <AvatarProfile className="rounded-full overflow-hidden w-10" />
+        <AvatarProfile className="rounded-full overflow-hidden w-14" />
         <div className="grid gap-1">
           <h1 className="text-xl font-bold">{contact.fullname}</h1>
           <div className="flex justify-start gap-4">
