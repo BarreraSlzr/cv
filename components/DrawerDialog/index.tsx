@@ -42,8 +42,8 @@ export function DrawerDialog(props: React.PropsWithChildren<{
     flex gap-2 justify-center
     ">
       <AvatarProfile className="rounded-full overflow-hidden w-8" />
-      <ChatBubbleLeftEllipsisIcon className="size-6 mb-1" />
       {props.title}
+      <ChatBubbleLeftEllipsisIcon className="size-6 mb-1" />
     </Button>
   </DialogTrigger>
   if (isDesktop) {
