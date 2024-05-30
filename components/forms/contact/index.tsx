@@ -14,6 +14,7 @@ import {
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
 import Link from "next/link";
+import { Badge } from '@/components/ui/badge';
 
 const iconMapping: Record<string, any> = {
   email: faEnvelope,
