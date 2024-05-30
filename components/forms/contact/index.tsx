@@ -33,7 +33,10 @@ export default function ContactForm({ className, contact }: React.ComponentProps
     <div className="bg-gray-100 grid items-start gap-4 rounded-lg m-2 p-2">
       <div className="flex gap-2 mt-2">
         <AvatarProfile className="rounded-full overflow-hidden w-10" />
-        <h1 className="text-xl font-bold">{contact.fullname}</h1>
+        <div className="grid gap-2">
+          <h1 className="text-xl font-bold">{contact.fullname}</h1>
+          <Badge variation="secondary">GMT+6</Badge>
+        </div>
       </div>
       <p className="text-gray-700">{contact.bio}</p>
       <div className="flex justify-center gap-4">
