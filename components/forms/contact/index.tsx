@@ -34,15 +34,18 @@ export default function ContactForm({ className, contact }: React.ComponentProps
         <h1 className="text-xl font-bold">{contact.fullname}</h1>
       </div>
       <p className="text-gray-700">{contact.bio}</p>
-      <div className="flex justify-center">
+      <div className="flex gap-2">
         <Link title="Send email" href={`mailto:${contact.email}`} className="mr-4">
+          <Badge>Send email</Badge>
           <FontAwesomeIcon icon={faEnvelope} className="text-blue-500" />
         </Link>
         <Link title="Make a call" href={`tel:${contact.phone}`} className="mr-4">
+           <Badge>Call me</Badge>
           <FontAwesomeIcon icon={faPhone} className="text-blue-500" />
         </Link>
         {contact.urls.map((url, index) => (
           <Link title={url.title} key={index} href={url.url} className="mr-4" target="_blank" rel="noopener noreferrer">
+            <Badge>{url.title}</Badge>
             <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-blue-500" />
           </Link>
         ))}
