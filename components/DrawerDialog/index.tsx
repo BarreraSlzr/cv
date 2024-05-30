@@ -20,7 +20,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-import { useMediaQuery } from "@uidotdev/usehooks"
+import useMediaQuery from "@/lib/hooks/useMediaQuery"
 import { useState } from "react"
 import AvatarProfile from "../avatar"
 import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/solid"
