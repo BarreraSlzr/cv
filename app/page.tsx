@@ -2,6 +2,7 @@ import CV from '@/components/cv';
 import { CVData } from '@/lib/types';
 
 export default function Home(){
+
   const data: CVData = {
     professionalPosition: 'Software Engineer',
     jobExperiences: [
@@ -13,7 +14,7 @@ export default function Home(){
           {
             name: 'Preboarding and Onboarding Web System App',
             description: 'Development of a web application for the management of the recruitment of human resources with external users, internal administrators and different roles involved.',
-            skillsUsed: [ 3, 5, 8, 10, 14, 15, 13, 16] 
+            skillsUsed: [3, 5, 8, 10, 14, 15, 13, 16, 11]
           },
           {
             name: 'Tariff Classifier for Aduanas',
@@ -45,7 +46,9 @@ export default function Home(){
             description: `I was committed to increasing technology awareness among my co-workers with technical talks not only with other developers, but also with many non-technological people, such as the Human Resources Department, helping to automate their workflows using Microsoft's new capabilities.`,
             skillsUsed: [24, 25]
           },
-        ]
+        ],
+        startDate: 'Oct. 2019',
+        endDate: 'Apr. 2024'
       },
       {
         title: 'Tech Support and Marketing Content Creator',
@@ -61,7 +64,9 @@ export default function Home(){
             description: 'Assist the company\'s clients with their problems on the software and hardware of the company\'s products.',
             skillsUsed: [20, 21],
           }
-        ]
+        ],
+        startDate: 'Mar. 2015',
+        endDate: 'Feb. 2018'
       }
     ],
     skills: [
@@ -75,7 +80,7 @@ export default function Home(){
       { id: 8, name: 'SASS', popularity: 90 },
       { id: 9, name: 'Tailwind CSS', popularity: 80 },
       { id: 10, name: 'SSO - Auth Providers', popularity: 85 },
-      { id: 11, name: 'Docker', popularity: 70 },
+      { id: 11, name: 'PWA - Progressive Web App', popularity: 73 },
       { id: 12, name: 'OpenAI', popularity: 60 },
       { id: 13, name: 'Azure Blob Storage', popularity: 70 },
       { id: 14, name: 'Azure WebApp', popularity: 65 },
@@ -94,7 +99,15 @@ export default function Home(){
     ],
     contactInfo: {
       email: 'BarreraSlzr@gmail.com',
-      phone: '+52 (33) 1165-4324'
+      phone: '+52 (33) 1165-4324',
+      fullname: 'Emmanuel Barrera Salazar',
+      bio: 'Experienced Software Engineer with a demonstrated history of working in the web development industry.',
+      urls: [
+        { title: 'Website', url: 'https://BarreraSlzr.InternetFriends.xyz', icon: 'linkedin' },
+        { title: 'LinkedIn', url: 'https://www.linkedin.com/in/barreraslzr/', icon: 'linkedin' },
+        { title: 'GitHub', url: 'https://github.com/barreraslzr', icon: 'github' },
+        { title: 'WhatsApp', url: 'https://wa.me/+523311654324', icon: 'whatsapp' }
+      ]
     }
   };
 

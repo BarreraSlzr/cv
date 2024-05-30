@@ -1,5 +1,8 @@
 import { CVData } from '@/lib/types';
 import { FC } from 'react';
+import { DrawerDialog } from '../DrawerDialog';
+import ContactForm from '../forms/contact';
+import { Badge } from '../ui/badge';
 
 interface CVProps {
   data: CVData;
@@ -15,20 +18,19 @@ const CV: FC<CVProps> = ({ data }) => {
       .sort((a, b) => (b?.popularity || 0) - (a?.popularity || 0));
 
     return sortedSkills.map(skill => (
-      <span key={skill?.id} className="bg-blue-100 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded">
+      <Badge key={skill?.id} className="transition bg-blue-100 text-blue-800 hover:text-blue-100">
         {skill?.name}
-      </span>
+      </Badge>
     ));
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className="max-w-4xl mx-auto p-6 relativef flex flex-col gap-2">
       <header className="bg-gray-100 p-4 rounded-lg mb-6">
         <h1 className="text-3xl font-bold text-center">
           Curriculum Vitae - <span className="text-blue-600">{data.professionalPosition}</span>
         </h1>
       </header>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <main className="md:col-span-2 bg-white p-4 rounded-lg shadow">
           <h2 className="text-2xl font-semibold mb-4">Core Job Expertise & History</h2>
@@ -36,6 +38,11 @@ const CV: FC<CVProps> = ({ data }) => {
             <section key={index} className="mb-4">
               <h3 className="text-xl font-semibold">{job.title}</h3>
               <p className="text-gray-500 italic mb-4">{job.razonSocial}</p>
+              <div className="flex mb-4">
+                <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+                  {job.startDate} - {job.endDate || "Present"}
+                </Badge>
+              </div>
               <p className="text-gray-700 mb-2">{job.description}</p>
               {job.projects.map((project, pIndex) => (
                 <div key={pIndex} className="ml-4 mb-4">
@@ -57,9 +64,14 @@ const CV: FC<CVProps> = ({ data }) => {
           </ul>
         </aside>
       </div>
-
-      <footer className="bg-gray-100 p-4 rounded-lg mt-6 text-center">
-        <p className="text-gray-700">Contact Info: {data.contactInfo.email} | {data.contactInfo.phone}</p>
+      {/* <div className="absolute">
+        <Button>{`Let's connect`}</Button>
+      </div> */}
+      <DrawerDialog title={`Let's connect`} description={''}>
+        <ContactForm className={""} contact={data.contactInfo}/>
+      </DrawerDialog>
+      <footer className="bg-gray-100 p-4 rounded-lg text-center">
+        <p className="text-gray-700">{data.contactInfo.email}</p>
       </footer>
     </div>
   );
