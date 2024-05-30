@@ -47,7 +47,7 @@ export default function ContactForm({ className, contact }: React.ComponentProps
               <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-gray-300 hover:text-blue-400" />
             </Link>
             ))}
-            <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm ml-2 mr-auto px-2.5 py-0.5 rounded">
+            <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm px-2.5 py-0.5 rounded">
             GMT+6</Badge>
           </div>
         </div>
