@@ -35,24 +35,24 @@ export default function ContactForm({ className, contact }: React.ComponentProps
         <AvatarProfile className="rounded-full overflow-hidden w-10" />
         <div className="grid gap-1">
           <h1 className="text-xl font-bold">{contact.fullname}</h1>
-           <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">
+          <div className="flex justify-center gap-4">
+            <Link title="Send email" href={`mailto:${contact.email}`} className="w-6 h-6">
+              <FontAwesomeIcon icon={faEnvelope} className="text-gray-300 hover:text-blue-400" />
+            </Link>
+            <Link title="Make a call" href={`tel:${contact.phone}`} className="w-6 h-6">
+              <FontAwesomeIcon icon={faPhone} className="text-gray-300 hover:text-blue-400" />
+            </Link>
+            {contact.urls.map((url, index) => (
+            <Link title={url.title} key={index} href={url.url} className="w-6 h-6" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-gray-300 hover:text-blue-400" />
+            </Link>
+            ))}
+            </div>
+            <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm ml-2 mr-auto px-2.5 py-0.5 rounded">
             GMT+6</Badge>
         </div>
       </div>
       <p className="text-gray-700">{contact.bio}</p>
-      <div className="flex justify-center gap-4">
-        <Link title="Send email" href={`mailto:${contact.email}`} className="w-6 h-6">
-          <FontAwesomeIcon icon={faEnvelope} className="text-gray-300 hover:text-blue-400" />
-        </Link>
-        <Link title="Make a call" href={`tel:${contact.phone}`} className="w-6 h-6">
-          <FontAwesomeIcon icon={faPhone} className="text-gray-300 hover:text-blue-400" />
-        </Link>
-        {contact.urls.map((url, index) => (
-          <Link title={url.title} key={index} href={url.url} className="w-6 h-6" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-gray-300 hover:text-blue-400" />
-          </Link>
-        ))}
-      </div>
       <form className={cn("grid items-start gap-4 p-2", className)}>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
