@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ContactInfo } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import {
   faLinkedin,
   faGithub,
@@ -22,7 +22,8 @@ const iconMapping: Record<string, any> = {
   linkedin: faLinkedin,
   github: faGithub,
   twitter: faTwitter,
-  whatsapp: faWhatsapp
+  whatsapp: faWhatsapp,
+  web: faGlobe
 };
 
 type Props = { contact: ContactInfo }
