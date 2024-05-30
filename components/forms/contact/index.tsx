@@ -50,11 +50,11 @@ export default function ContactForm({ className, contact }: React.ComponentProps
       <form className={cn("grid items-start gap-4 p-2", className)}>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
-          <Input type="email" id="email" defaultValue="your@mail.xyz" />
+          <Input type="email" id="email" placeholder="your@mail.xyz" />
         </div>
         <div className="grid gap-2">
           <Label htmlFor="message">Message</Label>
-          <Textarea id="message" defaultValue="Hi @barreraslzr" />
+          <Textarea id="message" placeholder="Hi @barreraslzr" />
         </div>
         <Button type="submit">Send</Button>
       </form>
