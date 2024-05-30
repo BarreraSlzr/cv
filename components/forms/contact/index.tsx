@@ -29,7 +29,7 @@ type Props = { contact: ContactInfo }
 export default function ContactForm({ className, contact }: React.ComponentProps<"form"> & Props) {
   return (
     <div className="bg-gray-100 grid items-start gap-4 rounded-lg m-2 p-2">
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-2">
         <AvatarProfile className="rounded-full overflow-hidden w-10" />
         <h1 className="text-xl font-bold">{contact.fullname}</h1>
       </div>
