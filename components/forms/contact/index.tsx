@@ -36,7 +36,7 @@ export default function ContactForm({ className, contact }: React.ComponentProps
         <h1 className="text-xl font-bold">{contact.fullname}</h1>
       </div>
       <p className="text-gray-700">{contact.bio}</p>
-      <div className="flex gap-4">
+      <div className="flex justify-center gap-4">
         <Link title="Send email" href={`mailto:${contact.email}`} className="w-6 h-6">
           <FontAwesomeIcon icon={faEnvelope} className="text-gray-300 hover:text-blue-400" />
         </Link>
