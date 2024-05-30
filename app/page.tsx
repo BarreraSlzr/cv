@@ -103,7 +103,7 @@ export default function Home(){
       fullname: 'Emmanuel Barrera Salazar',
       bio: 'Experienced Software Engineer with a demonstrated history of working in the web development industry.',
       urls: [
-        { title: 'Website', url: 'https://BarreraSlzr.InternetFriends.xyz', icon: 'linkedin' },
+        { title: 'Website', url: 'https://BarreraSlzr.InternetFriends.xyz', icon: 'web' },
         { title: 'LinkedIn', url: 'https://www.linkedin.com/in/barreraslzr/', icon: 'linkedin' },
         { title: 'GitHub', url: 'https://github.com/barreraslzr', icon: 'github' },
         { title: 'WhatsApp', url: 'https://wa.me/+523311654324', icon: 'whatsapp' }
