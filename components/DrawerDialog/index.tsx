@@ -27,12 +27,13 @@ import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/24/solid"
 
 export function DrawerDialog(props: React.PropsWithChildren<{
   title: string,
-  description: string
+  description: string,
+  isOnline: boolean,
 }>) {
   const [open, setOpen] = useState(false)
   const isDesktop = useMediaQuery("(min-width: 768px)")
 
-  const MainButton = <DialogTrigger asChild className="z-1 sticky bottom-9 md:fixed md:self-end">
+  const MainButton =
     <Button className="transition ease-in-out 
     md:rounded-l-full
     delay-150 
@@ -41,16 +42,18 @@ export function DrawerDialog(props: React.PropsWithChildren<{
     drop-shadow-md hover:drop-shadow-xl
     flex gap-2 justify-center
     ">
-      <AvatarProfile className="rounded-full overflow-hidden w-8" />
+      <AvatarProfile className="rounded-full overflow-hidden size-8" isOnline={props.isOnline} />
       {props.title}
-      <ChatBubbleLeftEllipsisIcon className="size-6 mb-1" />
+      <ChatBubbleLeftEllipsisIcon className="size-4 mb-1" />
+
     </Button>
-  </DialogTrigger>
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen} >
-        {MainButton}
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogTrigger asChild className="z-1 fixed bottom-9 md:fixed md:self-end">
+          {MainButton}
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[768px]">
           <DialogHeader>
             <DialogTitle>
               {props.title}
@@ -67,7 +70,9 @@ export function DrawerDialog(props: React.PropsWithChildren<{
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      {MainButton}
+      <DrawerTrigger asChild className="z-1 sticky bottom-9 md:fixed md:self-start">
+        {MainButton}
+      </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle>{props.title}</DrawerTitle>

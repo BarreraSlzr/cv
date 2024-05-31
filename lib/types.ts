@@ -30,6 +30,8 @@ export interface ContactInfo {
   bio: string;
   email: string;
   phone: string;
+  timezone: string;
+  isOnline: boolean
   urls: URL[];
 }
 

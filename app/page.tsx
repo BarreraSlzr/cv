@@ -2,8 +2,7 @@ import CV from '@/components/cv';
 import { CVData } from '@/lib/types';
 
 export default function Home(){
-
-  const data: CVData = {
+  let data: CVData = {
     professionalPosition: 'Software Engineer',
     jobExperiences: [
       {
@@ -101,7 +100,9 @@ export default function Home(){
       email: 'BarreraSlzr@gmail.com',
       phone: '+52 (33) 1165-4324',
       fullname: 'Emmanuel Barrera Salazar',
-      bio: 'Experienced Software Engineer with a demonstrated history of working in the web development industry.',
+      timezone: 'UTC-5',
+      isOnline: true,
+      bio: "I'm a passionate Software Engineer with expertise in JavaScript, TypeScript, React, and Node.js, I transform innovative ideas into reality by building dynamic, user-friendly applications. My diverse industry experience and keen eye for detail ensure top-notch performance and aesthetics. Always seeking the most efficient and innovative solutions, I stay current with industry trends to deliver future-proof projects",
       urls: [
         { title: 'Website', url: 'https://BarreraSlzr.InternetFriends.xyz', icon: 'web' },
         { title: 'LinkedIn', url: 'https://www.linkedin.com/in/barreraslzr/', icon: 'linkedin' },

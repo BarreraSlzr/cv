@@ -3,12 +3,16 @@ import { FC } from 'react';
 import { DrawerDialog } from '../DrawerDialog';
 import ContactForm from '../forms/contact';
 import { Badge } from '../ui/badge';
+import { DateTime } from 'luxon';
 
 interface CVProps {
   data: CVData;
 }
 
 const CV: FC<CVProps> = ({ data }) => {
+  const currentDate = DateTime.now().setZone(data.contactInfo.timezone);
+  data.contactInfo.isOnline = currentDate.hour >= 9 && currentDate.hour < 18;
+
   const renderSkills = (skillsUsed: number[]) => {
     const skillsMap = new Map(data.skills.map(skill => [skill.id, skill]));
 
@@ -18,7 +22,7 @@ const CV: FC<CVProps> = ({ data }) => {
       .sort((a, b) => (b?.popularity || 0) - (a?.popularity || 0));
 
     return sortedSkills.map(skill => (
-      <Badge key={skill?.id} className="transition bg-blue-100 text-blue-800 hover:text-blue-100">
+      <Badge key={skill?.id} className="bg-blue-100 text-blue-800 hover:text-blue-100">
         {skill?.name}
       </Badge>
     ));
@@ -67,8 +71,12 @@ const CV: FC<CVProps> = ({ data }) => {
       {/* <div className="absolute">
         <Button>{`Let's connect`}</Button>
       </div> */}
-      <DrawerDialog title={`Let's connect`} description={''}>
-        <ContactForm className={""} contact={data.contactInfo}/>
+      <DrawerDialog 
+      isOnline={data.contactInfo.isOnline}
+      title={`
+      Let's create together!
+      `} description={'Connect with me to explore how we can achieve your goals.'}>
+        <ContactForm className={""} contact={data.contactInfo} currentDate={currentDate}/>
       </DrawerDialog>
       <footer className="bg-gray-100 p-4 rounded-lg text-center">
         <p className="text-gray-700">{data.contactInfo.email}</p>

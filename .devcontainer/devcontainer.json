@@ -12,7 +12,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "pages/index.js"
+        "app/page.tsx",
       ]
     }
   },
@@ -24,7 +24,3 @@
   },
   "forwardPorts": [3000]
 }
-npx next-app@ my-app --typescript --tailwind --eslint
-
-npx create-next-app@canary my-app --typescript --tailwind --eslint
-```
