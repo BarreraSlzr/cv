@@ -73,9 +73,7 @@ const CV: FC<CVProps> = ({ data }) => {
       </div> */}
       <DrawerDialog 
       isOnline={data.contactInfo.isOnline}
-      title={`
-      Let's create together!
-      `} description={'Connect with me to explore how we can achieve your goals.'}>
+      title="Contact Information" description={'Connect with me to explore how we can achieve your goals.'}>
         <ContactForm className={""} contact={data.contactInfo} currentDate={currentDate}/>
       </DrawerDialog>
       <footer className="bg-gray-100 p-4 rounded-lg text-center">
