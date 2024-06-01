@@ -37,7 +37,7 @@ type Props = {
 
 export default function ContactForm({ className, contact, currentDate }: React.ComponentProps<"form"> & Props) {
   return (
-    <div className="bg-gray-100 grid items-start gap-4 rounded-lg m-2 p-2 max-h-20vh overflow-y-auto">
+    <div className="bg-gray-100 grid items-start gap-4 rounded-lg m-2 p-2 max-h-[450px] overflow-y-auto">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>
@@ -45,34 +45,13 @@ export default function ContactForm({ className, contact, currentDate }: React.C
             <div className="flex gap-2">
               <AvatarProfile isOnline={contact.isOnline} className="rounded-full overflow-hidden size-16" />
               <div className="flex flex-col gap-1">
-                <h1 className="text-xl font-bold text-justify">{contact.fullname}</h1>
-                <div className="flex grow flex-wrap items-start justify-start gap-4">
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm px-2.5 py-0.5 rounded">
-                          {contact.timezone}
-                        </Badge>
-                      </TooltipTrigger>
-                      <TooltipContent className="flex gap-1 items-center">
-                        <TimerIcon className="w-4 h-4 mb-1" />
-                        {currentDate.toFormat('HH:mm a')}
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                  <Link title="Send email" href={`mailto:${contact.email}`} className="size-6 mt-1">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-gray-400 hover:text-blue-400" />
-                  </Link>
-                  <Link title="Make a call" href={`tel:${contact.phone}`} className="size-5 mt-1">
-                    <FontAwesomeIcon icon={faPhone} className="text-gray-400 hover:text-blue-400" />
-                  </Link>
-                  {contact.urls.map((url, index) => (
-                    <Link title={url.title} key={index} href={url.url} className="size-5 mt-1" target="_blank" rel="noopener noreferrer">
-                      <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-blue-600 hover:text-blue-400" />
-                    </Link>
-                  ))}
+                <h1 className="text-xl font-bold text-left">{contact.fullname}</h1>
+              <Badge className="bg-green-200 text-green-700 hover:bg-blue-300 hover:text-blue-700 text-sm grow-0">
+                <span className="no-underline">
+                Available for hire
 
-                </div>
+                </span>
+              </Badge>
               </div>
             </div>
           </AccordionTrigger>
@@ -84,7 +63,38 @@ export default function ContactForm({ className, contact, currentDate }: React.C
           }</AccordionContent>
         </AccordionItem>
       </Accordion>
-      <p className="text-gray-800">{"      "}</p>
+      <div className="flex grow flex-wrap items-start justify-start gap-4">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <Badge className="bg-gray-200 text-gray-700 hover:bg-gray-300 text-sm px-2.5 py-0.5 rounded">
+                {contact.timezone}
+              </Badge>
+            </TooltipTrigger>
+            <TooltipContent className="flex gap-1 items-center">
+              <TimerIcon className="w-4 h-4 mb-1" />
+              {currentDate.toFormat('HH:mm a')}
+              <span className="italic text-xs">
+                <i>
+                  Americas/Mexico_City
+                </i>
+              </span>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <Link title="Send email" href={`mailto:${contact.email}`} className="size-6 mt-1">
+          <FontAwesomeIcon icon={faEnvelope} className="text-gray-400 hover:text-blue-400" />
+        </Link>
+        <Link title="Make a call" href={`tel:${contact.phone}`} className="size-5 mt-1">
+          <FontAwesomeIcon icon={faPhone} className="text-gray-400 hover:text-blue-400" />
+        </Link>
+        {contact.urls.map((url, index) => (
+          <Link title={url.title} key={index} href={url.url} className="size-5 mt-1" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={iconMapping[url.icon]} className="text-blue-600 hover:text-blue-400" />
+          </Link>
+        ))}
+
+      </div>
       <form className={cn("grid items-start gap-4 p-2", className)}>
         <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
