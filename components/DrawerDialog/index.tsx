@@ -42,10 +42,8 @@ export function DrawerDialog(props: React.PropsWithChildren<{
     drop-shadow-md hover:drop-shadow-xl
     flex gap-2 justify-center
     ">
-      <AvatarProfile className="rounded-full overflow-hidden size-8" isOnline={props.isOnline} />
       {props.title}
-      <ChatBubbleLeftEllipsisIcon className="size-4 mb-1" />
-
+      <AvatarProfile className="rounded-full overflow-hidden size-8" isOnline={props.isOnline} />
     </Button>
   if (isDesktop) {
     return (
