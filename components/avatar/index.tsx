@@ -4,7 +4,8 @@ import { Avatar, AvatarImage, AvatarFallback } from '@radix-ui/react-avatar'
 import React, { useMemo } from 'react'
 
 type Props = React.ButtonHTMLAttributes<HTMLSpanElement> & {
-    isOnline: boolean
+    isOnline?: boolean,
+    currentTime?: number
 }
 
 const AvatarProfile = (props: Props) => {
@@ -18,7 +19,7 @@ const AvatarProfile = (props: Props) => {
                         src="https://github.com/BarreraSlzr.png" alt="@BarreraSlzr" />
                     <AvatarFallback>EB</AvatarFallback>
                 </Avatar>
-                <div className="absolute size-[0.1rem] z-3 bottom-4 right-3">{props.isOnline ? '🦸' : '😴'}</div>
+                <div className="absolute size-[0.1rem] z-3 bottom-4 right-3">{props.isOnline ? '🦸' : '🕺'}</div>
 
             </div>
             <div className="absolute z-2 top-0 right-0">
